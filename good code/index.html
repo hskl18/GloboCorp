@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GloboCorp GPT Genie</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <div class="js-warning">
+        <h2>JavaScript Required</h2>
+        <p>
+          This Genie application requires JavaScript to function properly.
+          Please enable JavaScript in your browser settings.
+        </p>
+      </div>
+    </noscript>
+
+    <div class="app-container">
+      <header class="app-header">
+        <div class="genie-icon" aria-label="Genie">🧞‍♂️</div>
+        <h1 class="app-title">GloboCorp's GPT Genie</h1>
+        <p class="app-subtitle">
+          Tell us your wishes and all of your dreams will come true!
+        </p>
+      </header>
+
+      <main class="chat-main">
+        <section
+          class="chat-container"
+          id="chatContainer"
+          role="log"
+          aria-live="polite"
+          aria-label="Chat messages"
+        >
+          <div class="welcome-message">
+            <p>Welcome! Start a conversation by typing your message below...</p>
+          </div>
+        </section>
+
+        <div class="typing-indicator" id="typingIndicator" aria-hidden="true">
+          <span>Genie is thinking</span>
+          <div class="typing-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <form class="input-form" id="messageForm">
+          <div class="input-container">
+            <label for="messageInput" class="visually-hidden"
+              >Your message</label
+            >
+            <input
+              type="text"
+              id="messageInput"
+              class="message-input"
+              placeholder="Type your wish here..."
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="send-button" aria-label="Send message">
+              <span class="button-text">Send</span>
+              <span class="button-icon">✨</span>
+            </button>
+          </div>
+        </form>
+      </main>
+
+      <footer class="app-footer">
+        <p class="version-info">
+          <span class="app-name" data-name="GloboCorp's GPT Genie"></span>
+          <span class="app-version" data-version="2.0"></span>
+        </p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
