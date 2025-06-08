@@ -1,0 +1,3 @@
+#GloboCorp
+
+Random code simple
