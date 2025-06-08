@@ -1,3 +1,3 @@
-#GloboCorp
+# GloboCorp
 
 Random code simple
