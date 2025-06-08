@@ -463,7 +463,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.genieChat = new GenieChat();
 
     // Expose utilities for debugging (can be removed in production)
-    if (process?.env?.NODE_ENV === "development") {
+    if (
+      typeof process !== "undefined" &&
+      process?.env?.NODE_ENV === "development"
+    ) {
       window.GenieUtils = Utils;
       window.GenieConfig = CONFIG;
     }

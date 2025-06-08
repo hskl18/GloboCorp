@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GloboCorp GPT Genie</title>
     <style>
       .message {
@@ -37,6 +39,12 @@
       var messages = [];
       var count = 0;
 
+      function escapeHtml(text) {
+        var div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
       function send() {
         var input = document.getElementById("input");
         var prompt = input.value;
@@ -50,7 +58,8 @@
         messages.push(prompt);
 
         var chat = document.getElementById("chat");
-        chat.innerHTML += '<div class="message user">You: ' + prompt + "</div>";
+        chat.innerHTML +=
+          '<div class="message user">You: ' + escapeHtml(prompt) + "</div>";
         input.value = "";
 
         // TODO: Simulate the chat for now
@@ -69,7 +78,8 @@
             "Sounds like a plan",
           ];
           var reply = replies[Math.floor(Math.random() * replies.length)];
-          chat.innerHTML += '<div class="message bot">Bot: ' + reply + "</div>";
+          chat.innerHTML +=
+            '<div class="message bot">Bot: ' + escapeHtml(reply) + "</div>";
           chat.scrollTop = chat.scrollHeight;
         }, 500);
         // End Simulate
